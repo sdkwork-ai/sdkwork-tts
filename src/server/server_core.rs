@@ -9,7 +9,6 @@ use axum::{
 use std::sync::Arc;
 use std::time::{Duration, Instant};
 use tower_http::{
-    cors::{Any, CorsLayer},
     trace::TraceLayer,
     request_id::PropagateRequestIdLayer,
 };
@@ -189,16 +188,16 @@ impl ServerState {
 
 /// Create the router with all routes
 pub fn create_router(state: Arc<ServerState>) -> Router {
-    // CORS layer
-    let cors = CorsLayer::new()
-        .allow_origin(tower_http::cors::AllowOrigin::predicate(|origin, _| {
-            origin
-                .to_str()
-                .ok()
-                .is_some_and(sdkwork_web_core::is_development_private_network_origin)
-        }))
-        .allow_methods(Any)
-        .allow_headers(Any);
+    // CORS layer: dev semantics (loopback/private-network) merged with the
+    // canonical `SDKWORK_CORS_ALLOWED_ORIGINS` allowlist, built through the
+    // official framework policy -> tower-http layer bridge.
+    let cors = {
+        let policy = sdkwork_web_bootstrap::security_policy_for_environment(
+            &sdkwork_web_core::WebEnvironment::Dev,
+            sdkwork_web_bootstrap::cors_allowed_origins_from_process_env(),
+        );
+        sdkwork_web_axum::cors_layer_from_policy(policy.cors)
+    };
     
     // Build router
     Router::new()

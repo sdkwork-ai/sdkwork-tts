@@ -86,6 +86,8 @@ axum = { version = "0.7", features = ["macros"] }
 tower = "0.4"
 tower-http = { version = "0.5", features = ["cors", "trace", "fs", "request-id"] }
 sdkwork-web-core = { path = "../sdkwork-web-framework/crates/sdkwork-web-core" }
+sdkwork-web-axum = { path = "../sdkwork-web-framework/crates/sdkwork-web-axum" }
+sdkwork-web-bootstrap = { path = "../sdkwork-web-framework/crates/sdkwork-web-bootstrap" }
 hyper = { version = "1.0", features = ["full"] }
 hyper-util = { version = "0.1", features = ["full"] }
 
