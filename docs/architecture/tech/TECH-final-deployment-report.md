@@ -294,8 +294,8 @@ make verify    # 验证安装
 - **快速入门**: `GETTING_STARTED.md`
 - **部署指南**: `docs/DEPLOYMENT_GUIDE.md`
 - **部署体系**: `docs/DEPLOYMENT_SYSTEM_REPORT.md`
-- **GitHub Issues**: https://github.com/Sdkwork-Cloud/sdkwork-tts/issues
-- **GitHub Discussions**: https://github.com/Sdkwork-Cloud/sdkwork-tts/discussions
+- **GitHub Issues**: https://github.com/sdkwork-ai/sdkwork-tts/issues
+- **GitHub Discussions**: https://github.com/sdkwork-ai/sdkwork-tts/discussions
 
 ---
 

@@ -185,7 +185,7 @@ if ($Fail -eq 0) {
     Write-Host "Next steps:" -ForegroundColor Yellow
     Write-Host "1. Start server: sdkwork-tts server --mode local"
     Write-Host "2. Test API: curl http://localhost:8080/health"
-    Write-Host "3. View docs: https://github.com/Sdkwork-Cloud/sdkwork-tts"
+    Write-Host "3. View docs: https://github.com/sdkwork-ai/sdkwork-tts"
     exit 0
 } else {
     Write-Fail "✗ Installation verification failed"

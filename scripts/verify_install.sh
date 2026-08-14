@@ -192,7 +192,7 @@ if [ $FAIL -eq 0 ]; then
     echo -e "${YELLOW}Next steps:${NC}"
     echo "1. Start server: sdkwork-tts server --mode local"
     echo "2. Test API: curl http://localhost:8080/health"
-    echo "3. View docs: https://github.com/Sdkwork-Cloud/sdkwork-tts"
+    echo "3. View docs: https://github.com/sdkwork-ai/sdkwork-tts"
     exit 0
 else
     echo -e "${RED}✗ Installation verification failed${NC}"

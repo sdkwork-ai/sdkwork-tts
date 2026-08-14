@@ -145,7 +145,7 @@ print_summary() {
     echo "1. Restart your terminal or run: source ~/.bashrc (or ~/.zshrc)"
     echo "2. Verify installation: sdkwork-tts --version"
     echo "3. Start server: sdkwork-tts server --mode local"
-    echo "4. View documentation: https://github.com/Sdkwork-Cloud/sdkwork-tts"
+    echo "4. View documentation: https://github.com/sdkwork-ai/sdkwork-tts"
     echo ""
 }
 

@@ -25,7 +25,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ### 2. 克隆项目
 
 ```bash
-git clone https://github.com/Sdkwork-Cloud/sdkwork-tts.git
+git clone https://github.com/sdkwork-ai/sdkwork-tts.git
 cd sdkwork-tts
 ```
 
@@ -630,8 +630,8 @@ ps -o pid,rss,command -p $(pgrep sdkwork-tts)
 ## 📞 支持
 
 - **文档**: `/docs/`
-- **问题**: [GitHub Issues](https://github.com/Sdkwork-Cloud/sdkwork-tts/issues)
-- **讨论**: [GitHub Discussions](https://github.com/Sdkwork-Cloud/sdkwork-tts/discussions)
+- **问题**: [GitHub Issues](https://github.com/sdkwork-ai/sdkwork-tts/issues)
+- **讨论**: [GitHub Discussions](https://github.com/sdkwork-ai/sdkwork-tts/discussions)
 
 ---
 

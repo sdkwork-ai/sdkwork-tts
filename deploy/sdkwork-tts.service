@@ -3,7 +3,7 @@
 
 [Unit]
 Description=SDKWork-TTS Server
-Documentation=https://github.com/Sdkwork-Cloud/sdkwork-tts
+Documentation=https://github.com/sdkwork-ai/sdkwork-tts
 After=network.target network-online.target
 Wants=network-online.target
 

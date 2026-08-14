@@ -163,7 +163,7 @@ function Print-Summary {
     Write-Info "1. Restart your PowerShell session"
     Write-Info "2. Verify installation: sdkwork-tts --version"
     Write-Info "3. Start server: sdkwork-tts server --mode local"
-    Write-Info "4. View documentation: https://github.com/Sdkwork-Cloud/sdkwork-tts"
+    Write-Info "4. View documentation: https://github.com/sdkwork-ai/sdkwork-tts"
     Write-Host ""
 }
 

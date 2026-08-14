@@ -63,7 +63,7 @@ rustc --version  # 应显示 1.75+
 ### 3. 克隆项目
 
 ```bash
-git clone https://github.com/Sdkwork-Cloud/sdkwork-tts.git
+git clone https://github.com/sdkwork-ai/sdkwork-tts.git
 cd sdkwork-tts
 ```
 
@@ -731,10 +731,10 @@ Apache-2.0 License
 
 ## 📞 联系
 
-- **GitHub**: [Sdkwork-Cloud/sdkwork-tts](https://github.com/Sdkwork-Cloud/sdkwork-tts)
+- **GitHub**: [sdkwork-ai/sdkwork-tts](https://github.com/sdkwork-ai/sdkwork-tts)
 - **文档**: [docs/](docs/)
-- **问题**: [Issues](https://github.com/Sdkwork-Cloud/sdkwork-tts/issues)
-- **讨论**: [Discussions](https://github.com/Sdkwork-Cloud/sdkwork-tts/discussions)
+- **问题**: [Issues](https://github.com/sdkwork-ai/sdkwork-tts/issues)
+- **讨论**: [Discussions](https://github.com/sdkwork-ai/sdkwork-tts/discussions)
 
 ---
 
@@ -744,7 +744,7 @@ Apache-2.0 License
 
 ⭐ 如果这个项目对你有帮助，请给我们一个 Star！
 
-[文档](docs/) | [示例](examples/) | [问题反馈](https://github.com/Sdkwork-Cloud/sdkwork-tts/issues)
+[文档](docs/) | [示例](examples/) | [问题反馈](https://github.com/sdkwork-ai/sdkwork-tts/issues)
 
 </div>
 

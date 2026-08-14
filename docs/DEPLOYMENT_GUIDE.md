@@ -36,10 +36,10 @@ curl http://localhost:8080/health
 
 ```bash
 # Linux/macOS
-curl -fsSL https://github.com/Sdkwork-Cloud/sdkwork-tts/releases/latest/download/install.sh | bash
+curl -fsSL https://github.com/sdkwork-ai/sdkwork-tts/releases/latest/download/install.sh | bash
 
 # Windows PowerShell
-Invoke-WebRequest -Uri https://github.com/Sdkwork-Cloud/sdkwork-tts/releases/latest/download/install.ps1 -OutFile install.ps1
+Invoke-WebRequest -Uri https://github.com/sdkwork-ai/sdkwork-tts/releases/latest/download/install.ps1 -OutFile install.ps1
 .\install.ps1
 ```
 
@@ -47,7 +47,7 @@ Invoke-WebRequest -Uri https://github.com/Sdkwork-Cloud/sdkwork-tts/releases/lat
 
 ```bash
 # 克隆项目
-git clone https://github.com/Sdkwork-Cloud/sdkwork-tts.git
+git clone https://github.com/sdkwork-ai/sdkwork-tts.git
 cd sdkwork-tts
 
 # 编译
@@ -144,7 +144,7 @@ docker compose ps
 
 ```bash
 # 1. 下载安装脚本
-curl -fsSL https://raw.githubusercontent.com/Sdkwork-Cloud/sdkwork-tts/main/scripts/install.sh -o install.sh
+curl -fsSL https://raw.githubusercontent.com/sdkwork-ai/sdkwork-tts/main/scripts/install.sh -o install.sh
 
 # 2. 运行安装
 chmod +x install.sh
@@ -164,7 +164,7 @@ sdkwork-tts server --mode local
 
 ```powershell
 # 1. 下载安装脚本
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Sdkwork-Cloud/sdkwork-tts/main/scripts/install.ps1" -OutFile "install.ps1"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/sdkwork-ai/sdkwork-tts/main/scripts/install.ps1" -OutFile "install.ps1"
 
 # 2. 运行安装
 .\install.ps1
@@ -522,8 +522,8 @@ export MODE=cloud
 ## 📞 支持
 
 - **文档**: `/docs/`
-- **问题**: [GitHub Issues](https://github.com/Sdkwork-Cloud/sdkwork-tts/issues)
-- **讨论**: [GitHub Discussions](https://github.com/Sdkwork-Cloud/sdkwork-tts/discussions)
+- **问题**: [GitHub Issues](https://github.com/sdkwork-ai/sdkwork-tts/issues)
+- **讨论**: [GitHub Discussions](https://github.com/sdkwork-ai/sdkwork-tts/discussions)
 
 ---
 

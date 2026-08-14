@@ -5,10 +5,10 @@
 ### 安装
 ```bash
 # Linux/macOS
-curl -fsSL https://github.com/Sdkwork-Cloud/sdkwork-tts/raw/main/scripts/install.sh | bash
+curl -fsSL https://github.com/sdkwork-ai/sdkwork-tts/raw/main/scripts/install.sh | bash
 
 # Windows PowerShell
-Invoke-WebRequest -Uri "https://github.com/Sdkwork-Cloud/sdkwork-tts/raw/main/scripts/install.ps1" -OutFile install.ps1
+Invoke-WebRequest -Uri "https://github.com/sdkwork-ai/sdkwork-tts/raw/main/scripts/install.ps1" -OutFile install.ps1
 .\install.ps1
 ```
 
@@ -295,8 +295,8 @@ docker compose down && docker compose up -d
 - **文档**: `docs/`
 - **快速入门**: `GETTING_STARTED.md`
 - **部署指南**: `docs/DEPLOYMENT_GUIDE.md`
-- **GitHub Issues**: https://github.com/Sdkwork-Cloud/sdkwork-tts/issues
-- **Discussions**: https://github.com/Sdkwork-Cloud/sdkwork-tts/discussions
+- **GitHub Issues**: https://github.com/sdkwork-ai/sdkwork-tts/issues
+- **Discussions**: https://github.com/sdkwork-ai/sdkwork-tts/discussions
 
 ---
 

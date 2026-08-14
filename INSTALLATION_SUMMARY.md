@@ -149,8 +149,8 @@ docker compose down
 - [docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md)
 
 ### 社区
-- [GitHub Issues](https://github.com/Sdkwork-Cloud/sdkwork-tts/issues)
-- [GitHub Discussions](https://github.com/Sdkwork-Cloud/sdkwork-tts/discussions)
+- [GitHub Issues](https://github.com/sdkwork-ai/sdkwork-tts/issues)
+- [GitHub Discussions](https://github.com/sdkwork-ai/sdkwork-tts/discussions)
 
 ### 诊断
 ```bash
@@ -175,4 +175,4 @@ tail -f ~/.sdkwork-tts/logs/server.log
 
 **安装日期**: $(date)  
 **版本**: 1.0.0  
-**支持**: https://github.com/Sdkwork-Cloud/sdkwork-tts
+**支持**: https://github.com/sdkwork-ai/sdkwork-tts

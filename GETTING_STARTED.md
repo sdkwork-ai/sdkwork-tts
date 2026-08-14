@@ -56,7 +56,7 @@ curl -X POST http://localhost:8080/api/v1/synthesis \
 
 ```bash
 # 1. 一键安装
-curl -fsSL https://raw.githubusercontent.com/Sdkwork-Cloud/sdkwork-tts/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/sdkwork-ai/sdkwork-tts/main/scripts/install.sh | bash
 
 # 2. 加载环境变量
 source ~/.bashrc
@@ -72,7 +72,7 @@ sdkwork-tts server --mode local
 
 ```powershell
 # 1. 下载安装脚本
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Sdkwork-Cloud/sdkwork-tts/main/scripts/install.ps1" -OutFile "install.ps1"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/sdkwork-ai/sdkwork-tts/main/scripts/install.ps1" -OutFile "install.ps1"
 
 # 2. 运行安装
 .\install.ps1
@@ -90,7 +90,7 @@ sdkwork-tts server --mode local
 
 ```bash
 # 1. 克隆项目
-git clone https://github.com/Sdkwork-Cloud/sdkwork-tts.git
+git clone https://github.com/sdkwork-ai/sdkwork-tts.git
 cd sdkwork-tts
 
 # 2. 编译
@@ -269,8 +269,8 @@ export PATH="$HOME/.sdkwork-tts/bin:$PATH"
 ## 🆘 获取帮助
 
 - **文档**: `/docs/`
-- **问题**: [GitHub Issues](https://github.com/Sdkwork-Cloud/sdkwork-tts/issues)
-- **讨论**: [GitHub Discussions](https://github.com/Sdkwork-Cloud/sdkwork-tts/discussions)
+- **问题**: [GitHub Issues](https://github.com/sdkwork-ai/sdkwork-tts/issues)
+- **讨论**: [GitHub Discussions](https://github.com/sdkwork-ai/sdkwork-tts/discussions)
 
 ---
 

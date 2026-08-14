@@ -19,7 +19,7 @@ echo ""
 # Configuration
 INSTALL_DIR="${INSTALL_DIR:-$HOME/.sdkwork-tts}"
 BIN_DIR="$INSTALL_DIR/bin"
-REPO_URL="${REPO_URL:-https://github.com/Sdkwork-Cloud/sdkwork-tts}"
+REPO_URL="${REPO_URL:-https://github.com/sdkwork-ai/sdkwork-tts}"
 
 # Check if installed
 if [ ! -f "$BIN_DIR/sdkwork-tts" ]; then
@@ -38,7 +38,7 @@ echo -e "${YELLOW}Checking for updates...${NC}"
 
 # Try to get latest version from GitHub
 if command -v curl &> /dev/null; then
-    LATEST_VERSION=$(curl -s https://api.github.com/repos/Sdkwork-Cloud/sdkwork-tts/releases/latest | \
+    LATEST_VERSION=$(curl -s https://api.github.com/repos/sdkwork-ai/sdkwork-tts/releases/latest | \
         grep '"tag_name"' | \
         sed -E 's/.*"([^"]+)".*/\1/' | \
         sed 's/v//' || echo "")

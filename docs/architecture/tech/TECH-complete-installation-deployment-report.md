@@ -388,7 +388,7 @@ make doc            # 生成文档
 
 ```bash
 # 安装
-curl -fsSL https://github.com/Sdkwork-Cloud/sdkwork-tts/raw/main/scripts/install.sh | bash
+curl -fsSL https://github.com/sdkwork-ai/sdkwork-tts/raw/main/scripts/install.sh | bash
 
 # 验证
 ~/.sdkwork-tts/bin/verify_install.sh
