@@ -6,4 +6,4 @@ edition = "2021"
 [dependencies]
 axum = "0.8"
 tokio = { version = "1.48", features = ["macros", "net", "rt-multi-thread"] }
-sdkwork-api-tts-assembly = { path = "../sdkwork-api-tts-assembly" }
+sdkwork_api_tts_assembly.workspace = true
