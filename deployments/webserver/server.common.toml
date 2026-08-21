@@ -1,0 +1,5 @@
+specVersion = 1
+kind = "sdkwork.webserver.server"
+id = "tts"
+enabled = false
+description = "sdkwork-tts webserver placeholder (align-application-deploy-layout)"
