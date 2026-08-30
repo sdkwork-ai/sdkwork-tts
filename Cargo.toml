@@ -164,3 +164,8 @@ opt-level = 1
 
 [profile.bench]
 inherits = "release"
+
+
+[workspace.dependencies]
+sdkwork_web_bootstrap = { path = "../sdkwork-web-framework/crates/sdkwork-web-bootstrap", package = "sdkwork-web-bootstrap" }
+sdkwork_web_core = { path = "../sdkwork-web-framework/crates/sdkwork-web-core", package = "sdkwork-web-core" }

@@ -46,8 +46,8 @@
 
 | 文件 | 行数 | 用途 |
 |------|------|------|
-| `deploy/sdkwork-tts.service` | 60 | systemd 服务 |
-| `deploy/install-service.sh` | 100 | 服务安装脚本 |
+| `deployments/sdkwork-tts.service` | 60 | systemd 服务 |
+| `deployments/install-service.sh` | 100 | 服务安装脚本 |
 | `Makefile` | 200 | 构建自动化 |
 
 **小计**: 360 行
@@ -245,7 +245,7 @@ cat sdkwork-tts-diagnostic-*.txt
 sudo ./scripts/install.sh
 
 # 2. 安装 systemd 服务
-sudo ./deploy/install-service.sh
+sudo ./deployments/install-service.sh
 
 # 3. 启动服务
 sudo systemctl start sdkwork-tts

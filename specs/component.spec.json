@@ -53,6 +53,7 @@
     "publicExports": [
       "."
     ],
+    "sdkDependencies": [],
     "runtimeEntrypoints": [],
     "routeManifest": null,
     "sdkClients": [],
