@@ -126,11 +126,11 @@ name = "sdkwork-tts"
 path = "src/main.rs"
 
 [[bin]]
-name = "diagnose_weights"
+name = "diagnose-weights"
 path = "src/bin/diagnose_weights.rs"
 
 [[bin]]
-name = "test_length_regulator"
+name = "test-length-regulator"
 path = "src/bin/test_length_regulator.rs"
 
 [[example]]
@@ -169,3 +169,4 @@ inherits = "release"
 [workspace.dependencies]
 sdkwork_web_bootstrap = { path = "../sdkwork-web-framework/crates/sdkwork-web-bootstrap", package = "sdkwork-web-bootstrap" }
 sdkwork_web_core = { path = "../sdkwork-web-framework/crates/sdkwork-web-core", package = "sdkwork-web-core" }
+sdkwork_api_tts_assembly = { path = "crates/sdkwork-api-tts-assembly", package = "sdkwork-api-tts-assembly" }
