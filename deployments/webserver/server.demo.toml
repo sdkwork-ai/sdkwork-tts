@@ -1,0 +1,13 @@
+environment = "demo"
+
+[http]
+
+[[http.server]]
+listen = ["80"]
+serverName = ["tts-demo.sdkwork.com", "tts-demo.birdcoder.com", "tts-demo.dtupay.com", "tts-demo.noaper.com", "tts-demo.sdkwork.cn", "tts-demo.birdcoder.cn", "tts-demo.dtupay.cn", "tts-demo.noaper.cn", "tts-demo.skubc.com", "tts-demo.skubc.cn", "tts-demo.zowalk.com", "tts-demo.zowalk.cn", "tts-demo.offer86.com", "tts-demo.offer86.cn", "tts-demo.86offer.com", "tts-demo.86offer.cn"]
+include = ["snippets/adaptive-web.named-locations.conf", "snippets/gateway-api-locations.nonproduction.conf"]
+
+[[http.server.location]]
+match = "/"
+include = ["snippets/adaptive-web.dispatch.conf"]
+

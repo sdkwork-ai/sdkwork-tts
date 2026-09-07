@@ -5,5 +5,9 @@ environment = "development"
 [[http.server]]
 listen = ["80"]
 serverName = ["tts-dev.sdkwork.com", "tts-dev.birdcoder.com", "tts-dev.dtupay.com", "tts-dev.noaper.com", "tts-dev.sdkwork.cn", "tts-dev.birdcoder.cn", "tts-dev.dtupay.cn", "tts-dev.noaper.cn", "tts-dev.skubc.com", "tts-dev.skubc.cn", "tts-dev.zowalk.com", "tts-dev.zowalk.cn", "tts-dev.offer86.com", "tts-dev.offer86.cn", "tts-dev.86offer.com", "tts-dev.86offer.cn"]
-include = ["snippets/gateway-locations.nonproduction.conf"]
+include = ["snippets/adaptive-web.named-locations.conf", "snippets/gateway-api-locations.nonproduction.conf"]
+
+[[http.server.location]]
+match = "/"
+include = ["snippets/adaptive-web.dispatch.conf"]
 
