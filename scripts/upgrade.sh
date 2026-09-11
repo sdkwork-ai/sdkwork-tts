@@ -29,7 +29,7 @@ if [ ! -f "$BIN_DIR/sdkwork-tts" ]; then
 fi
 
 # Get current version
-CURRENT_VERSION=$("$BIN_DIR/sdkwork-tts" --version 2>/dev/null | grep -oP '\d+\.\d+\.\d+' || echo "unknown")
+CURRENT_VERSION=$("$BIN_DIR/sdkwork-tts" --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' || echo "unknown")
 echo -e "${YELLOW}Current version: $CURRENT_VERSION${NC}"
 echo ""
 
@@ -123,7 +123,7 @@ echo ""
 
 # Verify
 echo -e "${YELLOW}Verifying installation...${NC}"
-NEW_VERSION=$("$BIN_DIR/sdkwork-tts" --version 2>/dev/null | grep -oP '\d+\.\d+\.\d+' || echo "unknown")
+NEW_VERSION=$("$BIN_DIR/sdkwork-tts" --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' || echo "unknown")
 
 if [ "$NEW_VERSION" != "unknown" ]; then
     echo -e "${GREEN}✓ Upgraded to version $NEW_VERSION${NC}"

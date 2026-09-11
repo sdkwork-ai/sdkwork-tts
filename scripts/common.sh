@@ -267,6 +267,10 @@ todo_write() {
     local status=$3
     
     if [ -f "$file" ]; then
-        sed -i "s/\[ \] \[id:$id\]/[$status] [id:$id]/g" "$file"
+        # Portable in-place edit: plain sed + temp file + mv, so the script also
+        # runs on macOS, where `sed -i` requires a backup-suffix argument.
+        local tmp_file
+        tmp_file="$(mktemp)"
+        sed "s/\[ \] \[id:$id\]/[$status] [id:$id]/g" "$file" > "$tmp_file" && mv "$tmp_file" "$file"
     fi
 }

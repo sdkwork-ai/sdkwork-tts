@@ -106,7 +106,9 @@ echo -e "${YELLOW}Removing environment variables...${NC}"
 # Bash
 if [ -f ~/.bashrc ]; then
     if grep -q "SDKWORK_TTS" ~/.bashrc; then
-        sed -i '/# SDKWork-TTS/,/export SDKWORK_TTS_CONFIG/d' ~/.bashrc
+        # Portable in-place edit (macOS `sed -i` needs a backup-suffix argument).
+        _tts_tmp="$(mktemp)"
+        sed '/# SDKWork-TTS/,/export SDKWORK_TTS_CONFIG/d' ~/.bashrc > "$_tts_tmp" && mv "$_tts_tmp" ~/.bashrc
         echo -e "${GREEN}✓ Removed from ~/.bashrc${NC}"
         ((REMOVED++))
     else
@@ -118,7 +120,9 @@ fi
 # Zsh
 if [ -f ~/.zshrc ]; then
     if grep -q "SDKWORK_TTS" ~/.zshrc; then
-        sed -i '/# SDKWork-TTS/,/export SDKWORK_TTS_CONFIG/d' ~/.zshrc
+        # Portable in-place edit (macOS `sed -i` needs a backup-suffix argument).
+        _tts_tmp="$(mktemp)"
+        sed '/# SDKWork-TTS/,/export SDKWORK_TTS_CONFIG/d' ~/.zshrc > "$_tts_tmp" && mv "$_tts_tmp" ~/.zshrc
         echo -e "${GREEN}✓ Removed from ~/.zshrc${NC}"
         ((REMOVED++))
     else
@@ -131,7 +135,9 @@ fi
 if [ -d ~/.config/fish ]; then
     if [ -f ~/.config/fish/config.fish ]; then
         if grep -q "SDKWORK_TTS" ~/.config/fish/config.fish; then
-            sed -i '/SDKWORK_TTS/d' ~/.config/fish/config.fish
+            # Portable in-place edit (macOS `sed -i` needs a backup-suffix argument).
+            _tts_tmp="$(mktemp)"
+            sed '/SDKWORK_TTS/d' ~/.config/fish/config.fish > "$_tts_tmp" && mv "$_tts_tmp" ~/.config/fish/config.fish
             echo -e "${GREEN}✓ Removed from ~/.config/fish/config.fish${NC}"
             ((REMOVED++))
         else

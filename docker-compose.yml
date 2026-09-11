@@ -3,6 +3,14 @@
 
 version: '3.8'
 
+# Shared log rotation policy (OPERATIONS_SPEC.md §2.3): every service rotates
+# at 10MB, keeping 3 files, so container logs cannot fill the host disk.
+x-default-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
 services:
   # ============================================
   # TTS Server - CPU Mode
@@ -42,6 +50,7 @@ services:
   # ============================================
   # TTS Server - GPU Mode (NVIDIA)
   # ============================================
+    logging: *default-logging
   tts-gpu:
     build:
       context: .
@@ -81,6 +90,7 @@ services:
   # ============================================
   # TTS Server - Cloud Mode
   # ============================================
+    logging: *default-logging
   tts-cloud:
     build:
       context: .
@@ -113,6 +123,7 @@ services:
   # ============================================
   # Nginx Reverse Proxy (Optional)
   # ============================================
+    logging: *default-logging
   nginx:
     image: nginx:alpine
     container_name: sdkwork-tts-nginx
@@ -129,6 +140,7 @@ services:
       - tts-network
     profiles:
       - with-nginx
+    logging: *default-logging
 
 networks:
   tts-network:
