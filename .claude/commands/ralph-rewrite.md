@@ -14,7 +14,7 @@ Target Rust file: **$2**
 
 First, read and deeply understand the Python source:
 ```
-@C:\AI\index-tts\indextts\$1
+@<reference-checkout>\indextts\$1
 ```
 
 ### Questions to Answer:

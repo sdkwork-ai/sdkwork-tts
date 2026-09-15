@@ -6,11 +6,11 @@ Paste everything below into a fresh Claude session (with the same project files 
 
 ## CONTEXT
 
-I have an IndexTTS2 text-to-speech system rewritten in Rust at `C:\AI\indextts2-rust`. The code **compiles and runs end-to-end** (131 tests pass, CLI works, WAV files are generated), but **the audio output is noise/rumbling water instead of speech**.
+I have an IndexTTS2 text-to-speech system rewritten in Rust at `<reference-checkout>`. The code **compiles and runs end-to-end** (131 tests pass, CLI works, WAV files are generated), but **the audio output is noise/rumbling water instead of speech**.
 
 The root cause is known: **4 of 5 model components are running with random weights** because the pre-trained weight files use different tensor naming conventions than the Rust structs. Only BigVGAN vocoder weights load correctly. The other four — Wav2Vec-BERT, DiT, Conformer, and Perceiver — silently fall back to random initialization when the weight key names don't match.
 
-The original Python reference implementation is at `C:\AI\index-tts` (the `indextts` subdirectory contains the source). The Rust project's existing Python checkpoint files (`.pth` and `.safetensors`) are at `C:\AI\indextts2-rust\checkpoints\`.
+The original Python reference implementation is at `<reference-checkout>` (the `indextts` subdirectory contains the source). The Rust project's existing Python checkpoint files (`.pth` and `.safetensors`) are at `<reference-checkout>\checkpoints\`.
 
 ## TWO GOALS
 
@@ -59,48 +59,48 @@ For each of the 4 broken components:
 
 The Python reference implementation shows the exact model architecture and weight key paths:
 
-- Python GPT model (Conformer + Perceiver): `C:\AI\index-tts\indextts\gpt\model.py`
-- Python DiT model: `C:\AI\index-tts\indextts\s2mel\model.py` and `C:\AI\index-tts\indextts\s2mel\dit.py`
-- Python Wav2Vec-BERT usage: `C:\AI\index-tts\indextts\infer.py` (see how `Wav2VecFeatureExtractor` is loaded)
-- Python BigVGAN: `C:\AI\index-tts\indextts\BigVGAN\` directory
-- Python VQVAE/codec: `C:\AI\index-tts\indextts\vqvae\`
+- Python GPT model (Conformer + Perceiver): `<reference-checkout>\indextts\gpt\model.py`
+- Python DiT model: `<reference-checkout>\indextts\s2mel\model.py` and `<reference-checkout>\indextts\s2mel\dit.py`
+- Python Wav2Vec-BERT usage: `<reference-checkout>\indextts\infer.py` (see how `Wav2VecFeatureExtractor` is loaded)
+- Python BigVGAN: `<reference-checkout>\indextts\BigVGAN\` directory
+- Python VQVAE/codec: `<reference-checkout>\indextts\vqvae\`
 
 The Rust implementations that need fixing:
 
-- Wav2Vec-BERT: `C:\AI\indextts2-rust\src\models\semantic\wav2vec_bert.rs`
-- DiT: `C:\AI\indextts2-rust\src\models\s2mel\dit.rs`
-- Conformer: `C:\AI\indextts2-rust\src\models\gpt\conformer.rs`
-- Perceiver: `C:\AI\indextts2-rust\src\models\gpt\perceiver.rs`
-- GPT (UnifiedVoice): `C:\AI\indextts2-rust\src\models\gpt\unified_voice.rs`
-- BigVGAN (working reference): `C:\AI\indextts2-rust\src\models\vocoder\bigvgan.rs`
-- Pipeline: `C:\AI\indextts2-rust\src\inference\pipeline.rs`
+- Wav2Vec-BERT: `<reference-checkout>\src\models\semantic\wav2vec_bert.rs`
+- DiT: `<reference-checkout>\src\models\s2mel\dit.rs`
+- Conformer: `<reference-checkout>\src\models\gpt\conformer.rs`
+- Perceiver: `<reference-checkout>\src\models\gpt\perceiver.rs`
+- GPT (UnifiedVoice): `<reference-checkout>\src\models\gpt\unified_voice.rs`
+- BigVGAN (working reference): `<reference-checkout>\src\models\vocoder\bigvgan.rs`
+- Pipeline: `<reference-checkout>\src\inference\pipeline.rs`
 
 Checkpoint files:
 
-- `C:\AI\indextts2-rust\checkpoints\wav2vec_bert.safetensors` — Wav2Vec-BERT 2.0 weights
-- `C:\AI\indextts2-rust\checkpoints\gpt.safetensors` — GPT + Conformer + Perceiver weights
-- `C:\AI\indextts2-rust\checkpoints\s2mel.safetensors` — DiT + S2Mel weights
-- `C:\AI\indextts2-rust\checkpoints\bigvgan.safetensors` — BigVGAN vocoder (WORKING)
-- `C:\AI\indextts2-rust\checkpoints\config.yaml` — Model configuration (dimensions, layer counts)
+- `<reference-checkout>\checkpoints\wav2vec_bert.safetensors` — Wav2Vec-BERT 2.0 weights
+- `<reference-checkout>\checkpoints\gpt.safetensors` — GPT + Conformer + Perceiver weights
+- `<reference-checkout>\checkpoints\s2mel.safetensors` — DiT + S2Mel weights
+- `<reference-checkout>\checkpoints\bigvgan.safetensors` — BigVGAN vocoder (WORKING)
+- `<reference-checkout>\checkpoints\config.yaml` — Model configuration (dimensions, layer counts)
 
 ### Existing Debugging Docs (Read These)
 
-- `C:\AI\indextts2-rust\CLAUDE.md` — Full project overview, architecture, status
-- `C:\AI\indextts2-rust\CURRENT_STATUS.md` — Detailed component status
-- `C:\AI\indextts2-rust\DEBUGGING.md` — All fixes already attempted (FinalLayer AdaLN, GroupNorm, prompt_x)
-- `C:\AI\indextts2-rust\@fix_weight_architecture.md` — Detailed weight mapping plan (partially complete)
-- `C:\AI\indextts2-rust\FIXES.md` — Log of all fixes applied
+- `<reference-checkout>\CLAUDE.md` — Full project overview, architecture, status
+- `<reference-checkout>\CURRENT_STATUS.md` — Detailed component status
+- `<reference-checkout>\DEBUGGING.md` — All fixes already attempted (FinalLayer AdaLN, GroupNorm, prompt_x)
+- `<reference-checkout>\@fix_weight_architecture.md` — Detailed weight mapping plan (partially complete)
+- `<reference-checkout>\FIXES.md` — Log of all fixes applied
 
 ### Skills to Use
 
-- Read skill at `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md` — covers Candle patterns, weight loading, PyTorch→Candle operation mapping, and testing strategies.
+- Read skill at `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md` — covers Candle patterns, weight loading, PyTorch→Candle operation mapping, and testing strategies.
 - Use `Context7` MCP tool to fetch up-to-date Candle docs: `Context7:resolve-library-id "candle machine learning"` → `Context7:get-library-docs` with topic `"VarBuilder safetensors rename"`.
 
 ### Validation
 
 After fixing weight loading, run:
 ```bash
-cd C:\AI\indextts2-rust
+cd <reference-checkout>
 cargo run --release --bin indextts2 -- --cpu infer --text "Hello world, this is a test of the emergency broadcast system." --speaker "speaker_16k.wav" --output "output_fixed.wav"
 ```
 
@@ -180,9 +180,9 @@ Use the **builder** and **validator** agent definitions from the attached projec
 - The project uses **Candle** (HuggingFace's Rust ML framework), NOT PyTorch or ONNX.
 - Model weights are in **safetensors** format loaded via `VarBuilder::from_mmaped_safetensors()`.
 - The CLI command to test is: `cargo run --release --bin indextts2 -- --cpu infer --text "Hello world" --speaker "speaker_16k.wav" --output "output.wav"`
-- Read `C:\AI\indextts2-rust\CLAUDE.md` FIRST in every task — it has the full architecture and module map.
-- Read the skill at `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md` for Candle patterns.
-- The Python reference at `C:\AI\index-tts\indextts\` is the ground truth for weight names and model architecture.
+- Read `<reference-checkout>\CLAUDE.md` FIRST in every task — it has the full architecture and module map.
+- Read the skill at `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md` for Candle patterns.
+- The Python reference at `<reference-checkout>\indextts\` is the ground truth for weight names and model architecture.
 
 **DO NOT:**
 - Rewrite any model architecture (the Rust implementations are correct, only the weight *loading* is broken)

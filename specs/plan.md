@@ -69,43 +69,43 @@ The real issue may be more subtle than simple name mismatches — it could be mi
 Use these files to complete the task:
 
 **Rust model implementations (weight loading code to fix):**
-- `C:\AI\indextts2-rust\src\models\semantic\wav2vec_bert.rs` — Wav2Vec-BERT encoder, loads from `wav2vec_bert.safetensors`
-- `C:\AI\indextts2-rust\src\models\s2mel\dit.rs` — DiT transformer, loads from `s2mel.safetensors` via `load_s2mel_safetensors()`
-- `C:\AI\indextts2-rust\src\models\gpt\conformer.rs` — Conformer encoder, loads from `gpt.safetensors`
-- `C:\AI\indextts2-rust\src\models\gpt\perceiver.rs` — Perceiver resampler, loads from `gpt.safetensors`
-- `C:\AI\indextts2-rust\src\models\gpt\unified_voice.rs` — GPT/UnifiedVoice, orchestrates Conformer + Perceiver loading
-- `C:\AI\indextts2-rust\src\models\gpt\weights.rs` — GPT weight loading helpers
-- `C:\AI\indextts2-rust\src\models\s2mel\weights.rs` — S2Mel weight loading helpers (contains `load_s2mel_safetensors`)
-- `C:\AI\indextts2-rust\src\models\vocoder\bigvgan.rs` — BigVGAN vocoder (WORKING — use as reference for correct weight loading pattern)
-- `C:\AI\indextts2-rust\src\inference\pipeline.rs` — Inference pipeline (orchestrates all models)
+- `<reference-checkout>\src\models\semantic\wav2vec_bert.rs` — Wav2Vec-BERT encoder, loads from `wav2vec_bert.safetensors`
+- `<reference-checkout>\src\models\s2mel\dit.rs` — DiT transformer, loads from `s2mel.safetensors` via `load_s2mel_safetensors()`
+- `<reference-checkout>\src\models\gpt\conformer.rs` — Conformer encoder, loads from `gpt.safetensors`
+- `<reference-checkout>\src\models\gpt\perceiver.rs` — Perceiver resampler, loads from `gpt.safetensors`
+- `<reference-checkout>\src\models\gpt\unified_voice.rs` — GPT/UnifiedVoice, orchestrates Conformer + Perceiver loading
+- `<reference-checkout>\src\models\gpt\weights.rs` — GPT weight loading helpers
+- `<reference-checkout>\src\models\s2mel\weights.rs` — S2Mel weight loading helpers (contains `load_s2mel_safetensors`)
+- `<reference-checkout>\src\models\vocoder\bigvgan.rs` — BigVGAN vocoder (WORKING — use as reference for correct weight loading pattern)
+- `<reference-checkout>\src\inference\pipeline.rs` — Inference pipeline (orchestrates all models)
 
 **Checkpoint files (safetensors format):**
-- `C:\AI\indextts2-rust\checkpoints\wav2vec_bert.safetensors` — Wav2Vec-BERT 2.0 weights
-- `C:\AI\indextts2-rust\checkpoints\gpt.safetensors` — GPT + Conformer + Perceiver weights
-- `C:\AI\indextts2-rust\checkpoints\s2mel.safetensors` — DiT + S2Mel weights
-- `C:\AI\indextts2-rust\checkpoints\bigvgan.safetensors` — BigVGAN vocoder (WORKING reference)
-- `C:\AI\indextts2-rust\checkpoints\config.yaml` — Model configuration
+- `<reference-checkout>\checkpoints\wav2vec_bert.safetensors` — Wav2Vec-BERT 2.0 weights
+- `<reference-checkout>\checkpoints\gpt.safetensors` — GPT + Conformer + Perceiver weights
+- `<reference-checkout>\checkpoints\s2mel.safetensors` — DiT + S2Mel weights
+- `<reference-checkout>\checkpoints\bigvgan.safetensors` — BigVGAN vocoder (WORKING reference)
+- `<reference-checkout>\checkpoints\config.yaml` — Model configuration
 
 **Python reference implementation (ground truth for weight names and architecture):**
-- `C:\AI\index-tts\indextts\gpt\model.py` — Python GPT model (Conformer + Perceiver architecture)
-- `C:\AI\index-tts\indextts\s2mel\model.py` — Python S2Mel/DiT model
-- `C:\AI\index-tts\indextts\s2mel\dit.py` — Python DiT implementation
-- `C:\AI\index-tts\indextts\infer.py` — Python inference pipeline (shows how Wav2Vec-BERT is loaded/used)
-- `C:\AI\index-tts\indextts\BigVGAN\` — Python BigVGAN (working reference)
-- `C:\AI\index-tts\indextts\vqvae\` — Python VQVAE/codec
+- `<reference-checkout>\indextts\gpt\model.py` — Python GPT model (Conformer + Perceiver architecture)
+- `<reference-checkout>\indextts\s2mel\model.py` — Python S2Mel/DiT model
+- `<reference-checkout>\indextts\s2mel\dit.py` — Python DiT implementation
+- `<reference-checkout>\indextts\infer.py` — Python inference pipeline (shows how Wav2Vec-BERT is loaded/used)
+- `<reference-checkout>\indextts\BigVGAN\` — Python BigVGAN (working reference)
+- `<reference-checkout>\indextts\vqvae\` — Python VQVAE/codec
 
 **Documentation:**
-- `C:\AI\indextts2-rust\CLAUDE.md` — Full project overview, architecture, status
-- `C:\AI\indextts2-rust\CURRENT_STATUS.md` — Detailed component status
-- `C:\AI\indextts2-rust\DEBUGGING.md` — All fixes already attempted
-- `C:\AI\indextts2-rust\@fix_weight_architecture.md` — Partially complete weight mapping plan
+- `<reference-checkout>\CLAUDE.md` — Full project overview, architecture, status
+- `<reference-checkout>\CURRENT_STATUS.md` — Detailed component status
+- `<reference-checkout>\DEBUGGING.md` — All fixes already attempted
+- `<reference-checkout>\@fix_weight_architecture.md` — Partially complete weight mapping plan
 
 **Skills and tools:**
-- Skill file: `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md` — Candle patterns, weight loading, PyTorch→Candle mapping
+- Skill file: `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md` — Candle patterns, weight loading, PyTorch→Candle mapping
 - MCP tool: `Context7` — Fetch up-to-date Candle documentation
 
 ### New Files
-- `C:\AI\indextts2-rust\src\bin\diagnose_weights.rs` — Diagnostic binary to compare checkpoint keys vs Rust expected keys
+- `<reference-checkout>\src\bin\diagnose_weights.rs` — Diagnostic binary to compare checkpoint keys vs Rust expected keys
 
 ## Implementation Phases
 
@@ -208,8 +208,8 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-cleanup
 - **Agent Type**: general-purpose
 - **Parallel**: true (can run alongside diagnosis)
-- Read `C:\AI\indextts2-rust\CLAUDE.md` to understand the project structure.
-- Delete the following files from `C:\AI\indextts2-rust\`:
+- Read `<reference-checkout>\CLAUDE.md` to understand the project structure.
+- Delete the following files from `<reference-checkout>\`:
   - WAV artifacts: `test_output.wav`, `test_output2.wav`, `test_output3.wav`, `test_output4.wav`, `test_output5.wav`, `test_output6.wav`, `test_output7.wav`, `test_output8.wav`, `test_debug.wav`, `test_final.wav`, `output.wav`, `output_cfg0.wav`, `output_fox.wav`, `output_test.wav`, `default.wav`
   - Debug artifacts: `dit_test_output.txt`, `nul`
   - Stale planning docs: `@AGENT.md`, `@fix_compilation_errors.md`, `@fix_plan.md`, `@fix_plan_phase6.md`, `@fix_plan_phase7.md`, `@fix_plan_phase8.md`, `@fix_plan_phase9.md`, `@fix_weight_architecture.md`, `AGENTS.md`, `GEMINI.md`, `FIXES.md`, `FIX_TOKENIZER.md`, `DEBUG_STRATEGY.md`, `PROMPT.md`
@@ -217,7 +217,7 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
   - Git scripts: `cleanup_github.bat`, `setup_github.bat`, `push_to_github.sh`
   - Directories: `.gemini-clipboard/`, `.planning/`
 - Do NOT delete: `CLAUDE.md`, `CURRENT_STATUS.md`, `DEBUGGING.md`, `README.md`, `Cargo.toml`, `Cargo.lock`, `.gitignore`, `speaker.wav`, `speaker_16k.wav`, `src/`, `checkpoints/`, `tests/`, `benches/`, `examples/`, `scripts/`, `specs/`, `.claude/`, `logs/`, `debug/`, `target/`
-- After deletion, run `dir C:\AI\indextts2-rust\` to confirm only expected files remain.
+- After deletion, run `dir <reference-checkout>\` to confirm only expected files remain.
 
 ### 2. Validate Cleanup
 - **Task ID**: validate-cleanup
@@ -225,7 +225,7 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: validator-cleanup
 - **Agent Type**: general-purpose
 - **Parallel**: false
-- List the contents of `C:\AI\indextts2-rust\` and verify:
+- List the contents of `<reference-checkout>\` and verify:
   - None of the files from the deletion list exist
   - All files from the "keep" list still exist
   - The `.gemini-clipboard/` and `.planning/` directories no longer exist
@@ -237,23 +237,23 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-diagnosis
 - **Agent Type**: general-purpose
 - **Parallel**: true (can run alongside cleanup)
-- Read `C:\AI\indextts2-rust\CLAUDE.md` FIRST to understand the full architecture and module map.
-- Read the skill documentation at `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md` to understand Candle patterns and weight loading.
+- Read `<reference-checkout>\CLAUDE.md` FIRST to understand the full architecture and module map.
+- Read the skill documentation at `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md` to understand Candle patterns and weight loading.
 - Use the `Context7` MCP tool: run `Context7:resolve-library-id "candle machine learning"` then `Context7:get-library-docs` with topic `"safetensors VarBuilder load"` to fetch up-to-date Candle documentation on safetensors loading.
-- Create a new Rust binary at `C:\AI\indextts2-rust\src\bin\diagnose_weights.rs` that does the following for each checkpoint file:
+- Create a new Rust binary at `<reference-checkout>\src\bin\diagnose_weights.rs` that does the following for each checkpoint file:
   1. Load the safetensors file using `candle_core::safetensors::load()` to get a `HashMap<String, Tensor>`.
   2. Print every tensor key and its shape, sorted alphabetically.
   3. For each model component, list which keys the Rust code attempts to look up (trace through the `from_tensors` / `load_weights` functions in the source files).
   4. Categorize each expected key as: FOUND (present in checkpoint), MISSING (not in checkpoint → falls back to random), or SHAPE_MISMATCH.
   5. Print a summary per component: total expected tensors, found, missing, shape mismatches.
 - The checkpoint files to diagnose:
-  - `C:\AI\indextts2-rust\checkpoints\wav2vec_bert.safetensors` — expected keys come from `src/models/semantic/wav2vec_bert.rs` (the `EncoderLayer::from_tensors`, `FeatureProjection::from_tensors`, `SelfAttention::from_tensors`, `FeedForward::from_tensors`, `ConvModule::from_tensors` functions)
-  - `C:\AI\indextts2-rust\checkpoints\gpt.safetensors` — expected keys come from `src/models/gpt/conformer.rs` and `src/models/gpt/perceiver.rs` (trace through `load_weights` methods)
-  - `C:\AI\indextts2-rust\checkpoints\s2mel.safetensors` — expected keys come from `src/models/s2mel/dit.rs` (the `DiffusionTransformer::load_weights` method, using prefix `cfm.estimator`)
-  - `C:\AI\indextts2-rust\checkpoints\bigvgan.safetensors` — include as WORKING REFERENCE to show what correct loading looks like
-- Also cross-reference with the Python source files at `C:\AI\index-tts\indextts\` to identify any tensors in the checkpoint that the Python code uses but the Rust code does not attempt to load.
-- Run the diagnostic: `cd C:\AI\indextts2-rust && cargo run --release --bin diagnose_weights`
-- Save the full output to `C:\AI\indextts2-rust\specs\weight_diagnosis_report.txt`
+  - `<reference-checkout>\checkpoints\wav2vec_bert.safetensors` — expected keys come from `src/models/semantic/wav2vec_bert.rs` (the `EncoderLayer::from_tensors`, `FeatureProjection::from_tensors`, `SelfAttention::from_tensors`, `FeedForward::from_tensors`, `ConvModule::from_tensors` functions)
+  - `<reference-checkout>\checkpoints\gpt.safetensors` — expected keys come from `src/models/gpt/conformer.rs` and `src/models/gpt/perceiver.rs` (trace through `load_weights` methods)
+  - `<reference-checkout>\checkpoints\s2mel.safetensors` — expected keys come from `src/models/s2mel/dit.rs` (the `DiffusionTransformer::load_weights` method, using prefix `cfm.estimator`)
+  - `<reference-checkout>\checkpoints\bigvgan.safetensors` — include as WORKING REFERENCE to show what correct loading looks like
+- Also cross-reference with the Python source files at `<reference-checkout>\indextts\` to identify any tensors in the checkpoint that the Python code uses but the Rust code does not attempt to load.
+- Run the diagnostic: `cd <reference-checkout> && cargo run --release --bin diagnose_weights`
+- Save the full output to `<reference-checkout>\specs\weight_diagnosis_report.txt`
 - CRITICAL: Do NOT modify any model source files in this task. This is diagnosis only.
 
 ### 4. Fix Wav2Vec-BERT Weight Loading
@@ -262,17 +262,17 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-wav2vec
 - **Agent Type**: general-purpose
 - **Parallel**: true (can run in parallel with fix-dit, fix-conformer, fix-perceiver)
-- Read `C:\AI\indextts2-rust\CLAUDE.md` FIRST.
-- Read the skill documentation at `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md`.
-- Read the diagnosis report at `C:\AI\indextts2-rust\specs\weight_diagnosis_report.txt` to understand exactly which tensors are missing for Wav2Vec-BERT.
-- Read the Python reference at `C:\AI\index-tts\indextts\infer.py` to understand how Wav2Vec-BERT is loaded (look for `Wav2VecFeatureExtractor` or `Wav2VecBert`).
-- Read the current Rust implementation at `C:\AI\indextts2-rust\src\models\semantic\wav2vec_bert.rs`.
-- Read BigVGAN at `C:\AI\indextts2-rust\src\models\vocoder\bigvgan.rs` as a reference for correct weight loading patterns.
+- Read `<reference-checkout>\CLAUDE.md` FIRST.
+- Read the skill documentation at `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md`.
+- Read the diagnosis report at `<reference-checkout>\specs\weight_diagnosis_report.txt` to understand exactly which tensors are missing for Wav2Vec-BERT.
+- Read the Python reference at `<reference-checkout>\indextts\infer.py` to understand how Wav2Vec-BERT is loaded (look for `Wav2VecFeatureExtractor` or `Wav2VecBert`).
+- Read the current Rust implementation at `<reference-checkout>\src\models\semantic\wav2vec_bert.rs`.
+- Read BigVGAN at `<reference-checkout>\src\models\vocoder\bigvgan.rs` as a reference for correct weight loading patterns.
 - Based on the diagnosis report, implement the minimal changes needed to correctly load all Wav2Vec-BERT tensors from the checkpoint. This may involve:
   - Adjusting key name patterns in `from_tensors` methods
   - Adding a key mapping/rename step before tensor lookup
   - Removing silent fallback to random init (make missing tensors an error, or at least a loud warning)
-- After fixing, verify by running: `cd C:\AI\indextts2-rust && cargo test --lib models::semantic`
+- After fixing, verify by running: `cd <reference-checkout> && cargo test --lib models::semantic`
 - Do NOT change the model architecture (layer dimensions, attention patterns, etc.). Only fix how weights are loaded.
 - Do NOT touch BigVGAN — it already works.
 
@@ -282,12 +282,12 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-dit
 - **Agent Type**: general-purpose
 - **Parallel**: true
-- Read `C:\AI\indextts2-rust\CLAUDE.md` FIRST.
-- Read the skill documentation at `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md`.
-- Read the diagnosis report at `C:\AI\indextts2-rust\specs\weight_diagnosis_report.txt` to understand exactly which tensors are missing for DiT.
-- Read the Python reference at `C:\AI\index-tts\indextts\s2mel\dit.py` and `C:\AI\index-tts\indextts\s2mel\model.py` for the ground-truth DiT architecture and weight names.
-- Read the current Rust implementation at `C:\AI\indextts2-rust\src\models\s2mel\dit.rs`.
-- Read the weight loading helper at `C:\AI\indextts2-rust\src\models\s2mel\weights.rs` (contains `load_s2mel_safetensors`).
+- Read `<reference-checkout>\CLAUDE.md` FIRST.
+- Read the skill documentation at `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md`.
+- Read the diagnosis report at `<reference-checkout>\specs\weight_diagnosis_report.txt` to understand exactly which tensors are missing for DiT.
+- Read the Python reference at `<reference-checkout>\indextts\s2mel\dit.py` and `<reference-checkout>\indextts\s2mel\model.py` for the ground-truth DiT architecture and weight names.
+- Read the current Rust implementation at `<reference-checkout>\src\models\s2mel\dit.rs`.
+- Read the weight loading helper at `<reference-checkout>\src\models\s2mel\weights.rs` (contains `load_s2mel_safetensors`).
 - Based on the diagnosis report, implement the minimal changes to correctly load all DiT tensors. Pay special attention to:
   - The `cfm.estimator` prefix handling
   - Transformer block loading: `attention_norm`, `attention.wqkv`, `attention.wo`, `ffn_norm`, `feed_forward.w1/w2/w3`
@@ -295,7 +295,7 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
   - `x_embedder`, `cond_embedder`, `cond_projection`, `cond_x_merge_linear`, `skip_linear`
   - `final_layer.adaLN_modulation`, `final_layer.linear` (weight-normalized)
   - `conv2` output projection
-- After fixing, verify: `cd C:\AI\indextts2-rust && cargo test --lib models::s2mel`
+- After fixing, verify: `cd <reference-checkout> && cargo test --lib models::s2mel`
 - Do NOT change model architecture. Only fix weight loading.
 
 ### 6. Fix Conformer Weight Loading
@@ -304,19 +304,19 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-conformer
 - **Agent Type**: general-purpose
 - **Parallel**: true
-- Read `C:\AI\indextts2-rust\CLAUDE.md` FIRST.
-- Read the skill documentation at `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md`.
-- Read the diagnosis report at `C:\AI\indextts2-rust\specs\weight_diagnosis_report.txt` for Conformer-specific missing tensors.
-- Read the Python reference at `C:\AI\index-tts\indextts\gpt\model.py` — search for the Conformer / conditioning encoder class to see exact weight names.
-- Read the current Rust implementation at `C:\AI\indextts2-rust\src\models\gpt\conformer.rs`.
-- Read the GPT weight loading at `C:\AI\indextts2-rust\src\models\gpt\weights.rs` and `C:\AI\indextts2-rust\src\models\gpt\unified_voice.rs` to understand how gpt.safetensors is loaded and passed to the Conformer.
+- Read `<reference-checkout>\CLAUDE.md` FIRST.
+- Read the skill documentation at `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md`.
+- Read the diagnosis report at `<reference-checkout>\specs\weight_diagnosis_report.txt` for Conformer-specific missing tensors.
+- Read the Python reference at `<reference-checkout>\indextts\gpt\model.py` — search for the Conformer / conditioning encoder class to see exact weight names.
+- Read the current Rust implementation at `<reference-checkout>\src\models\gpt\conformer.rs`.
+- Read the GPT weight loading at `<reference-checkout>\src\models\gpt\weights.rs` and `<reference-checkout>\src\models\gpt\unified_voice.rs` to understand how gpt.safetensors is loaded and passed to the Conformer.
 - Based on the diagnosis report, implement minimal changes to load all Conformer tensors correctly. Key areas:
   - `conditioning_encoder.encoders.{i}.*` prefix and sub-component names
   - Self-attention: `linear_q`, `linear_k`, `linear_v`, `linear_out` (or different naming)
   - Feed-forward: `w_1`, `w_2` (or different naming)
   - Conv module: pointwise convolutions, depthwise convolution
   - Layer norms: `norm_mha`, `norm_ff`, `norm_conv`, `norm_final`
-- After fixing, verify: `cd C:\AI\indextts2-rust && cargo test --lib models::gpt`
+- After fixing, verify: `cd <reference-checkout> && cargo test --lib models::gpt`
 - Do NOT change model architecture.
 
 ### 7. Fix Perceiver Weight Loading
@@ -325,18 +325,18 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-perceiver
 - **Agent Type**: general-purpose
 - **Parallel**: true
-- Read `C:\AI\indextts2-rust\CLAUDE.md` FIRST.
-- Read the skill documentation at `C:\Users\Henri Smith\.claude-membership\skills\rust-tts\SKILL.md`.
-- Read the diagnosis report at `C:\AI\indextts2-rust\specs\weight_diagnosis_report.txt` for Perceiver-specific missing tensors.
-- Read the Python reference at `C:\AI\index-tts\indextts\gpt\model.py` — search for the Perceiver / `perceiver_encoder` class.
-- Read the current Rust implementation at `C:\AI\indextts2-rust\src\models\gpt\perceiver.rs`.
+- Read `<reference-checkout>\CLAUDE.md` FIRST.
+- Read the skill documentation at `<home> Smith\.claude-membership\skills\rust-tts\SKILL.md`.
+- Read the diagnosis report at `<reference-checkout>\specs\weight_diagnosis_report.txt` for Perceiver-specific missing tensors.
+- Read the Python reference at `<reference-checkout>\indextts\gpt\model.py` — search for the Perceiver / `perceiver_encoder` class.
+- Read the current Rust implementation at `<reference-checkout>\src\models\gpt\perceiver.rs`.
 - Based on the diagnosis report, implement minimal changes. Key areas:
   - `perceiver_encoder.latents` — learned latent queries [32, 1280]
   - Cross-attention layers: `perceiver_encoder.layers.{i}.0.to_q`, `to_kv`, `to_out`
   - FFN layers: `perceiver_encoder.layers.{i}.1.0`, `1.2`
   - Norm: `perceiver_encoder.norm.gamma`
   - Context projection: `perceiver_encoder.proj_context`
-- After fixing, verify: `cd C:\AI\indextts2-rust && cargo test --lib models::gpt`
+- After fixing, verify: `cd <reference-checkout> && cargo test --lib models::gpt`
 - Do NOT change model architecture.
 
 ### 8. Integration Test — Full Inference
@@ -345,10 +345,10 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-integration
 - **Agent Type**: general-purpose
 - **Parallel**: false
-- Read `C:\AI\indextts2-rust\CLAUDE.md` FIRST.
-- Ensure all 4 component fixes compile together: `cd C:\AI\indextts2-rust && cargo build --release --bin indextts2`
-- Run full test suite: `cd C:\AI\indextts2-rust && cargo test`
-- Run full inference: `cd C:\AI\indextts2-rust && cargo run --release --bin indextts2 -- --cpu infer --text "Hello world, this is a test of the emergency broadcast system." --speaker "speaker_16k.wav" --output "output_fixed.wav"`
+- Read `<reference-checkout>\CLAUDE.md` FIRST.
+- Ensure all 4 component fixes compile together: `cd <reference-checkout> && cargo build --release --bin indextts2`
+- Run full test suite: `cd <reference-checkout> && cargo test`
+- Run full inference: `cd <reference-checkout> && cargo run --release --bin indextts2 -- --cpu infer --text "Hello world, this is a test of the emergency broadcast system." --speaker "speaker_16k.wav" --output "output_fixed.wav"`
 - Examine the output:
   - Check that `output_fixed.wav` was created and is non-empty
   - Check stderr/stdout for any "Missing tensor" or "using random initialization" warnings — there should be NONE (or at most for non-critical optional tensors)
@@ -362,11 +362,11 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: validator-weights
 - **Agent Type**: general-purpose
 - **Parallel**: false
-- Read `C:\AI\indextts2-rust\CLAUDE.md` and `C:\AI\indextts2-rust\specs\weight_diagnosis_report.txt`.
-- Re-run the diagnostic binary to confirm all tensors now load: `cd C:\AI\indextts2-rust && cargo run --release --bin diagnose_weights`
+- Read `<reference-checkout>\CLAUDE.md` and `<reference-checkout>\specs\weight_diagnosis_report.txt`.
+- Re-run the diagnostic binary to confirm all tensors now load: `cd <reference-checkout> && cargo run --release --bin diagnose_weights`
 - Verify that for each of the 4 components, the number of MISSING tensors is 0 (or contains only truly optional tensors with documented justification).
-- Re-run inference: `cd C:\AI\indextts2-rust && cargo run --release --bin indextts2 -- --cpu infer --text "Testing one two three." --speaker "speaker_16k.wav" --output "output_validation.wav"`
-- Run full test suite: `cd C:\AI\indextts2-rust && cargo test`
+- Re-run inference: `cd <reference-checkout> && cargo run --release --bin indextts2 -- --cpu infer --text "Testing one two three." --speaker "speaker_16k.wav" --output "output_validation.wav"`
+- Run full test suite: `cd <reference-checkout> && cargo test`
 - Report pass/fail with specifics on:
   - Number of tensors loaded vs missing per component
   - Mel spectrogram mean of generated vs speaker reference
@@ -379,7 +379,7 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 - **Assigned To**: builder-docs
 - **Agent Type**: general-purpose
 - **Parallel**: false
-- Read current `C:\AI\indextts2-rust\CLAUDE.md`, `C:\AI\indextts2-rust\CURRENT_STATUS.md`, and `C:\AI\indextts2-rust\DEBUGGING.md`.
+- Read current `<reference-checkout>\CLAUDE.md`, `<reference-checkout>\CURRENT_STATUS.md`, and `<reference-checkout>\DEBUGGING.md`.
 - Update `CLAUDE.md`:
   - Change status banner from "PIPELINE RUNS BUT AUDIO IS NOISE" to reflect current state (either "AUDIO WORKING" or "WEIGHT LOADING FIXED — AUDIO QUALITY UNDER EVALUATION")
   - Remove the "Model Weight Loading Status" section's misleading "✅ Loaded" markers if any were previously incorrect
@@ -409,12 +409,12 @@ Update CLAUDE.md, CURRENT_STATUS.md, and DEBUGGING.md to reflect the weight load
 
 Execute these commands to validate the task is complete:
 
-- `cd C:\AI\indextts2-rust && cargo build --release --bin indextts2` — Verify clean compilation
-- `cd C:\AI\indextts2-rust && cargo test` — Verify all tests pass (expect 131+)
-- `cd C:\AI\indextts2-rust && cargo run --release --bin diagnose_weights` — Verify all tensors load (0 MISSING per component)
-- `cd C:\AI\indextts2-rust && cargo run --release --bin indextts2 -- --cpu infer --text "Hello world, this is a test of the emergency broadcast system." --speaker "speaker_16k.wav" --output "output_fixed.wav"` — Verify inference runs and produces speech audio
-- `dir C:\AI\indextts2-rust\*.md` — Verify only CLAUDE.md, CURRENT_STATUS.md, DEBUGGING.md, README.md remain as markdown files in root
-- `dir C:\AI\indextts2-rust\*.wav` — Verify only speaker.wav, speaker_16k.wav, and output_fixed.wav remain
+- `cd <reference-checkout> && cargo build --release --bin indextts2` — Verify clean compilation
+- `cd <reference-checkout> && cargo test` — Verify all tests pass (expect 131+)
+- `cd <reference-checkout> && cargo run --release --bin diagnose_weights` — Verify all tensors load (0 MISSING per component)
+- `cd <reference-checkout> && cargo run --release --bin indextts2 -- --cpu infer --text "Hello world, this is a test of the emergency broadcast system." --speaker "speaker_16k.wav" --output "output_fixed.wav"` — Verify inference runs and produces speech audio
+- `dir <reference-checkout>\*.md` — Verify only CLAUDE.md, CURRENT_STATUS.md, DEBUGGING.md, README.md remain as markdown files in root
+- `dir <reference-checkout>\*.wav` — Verify only speaker.wav, speaker_16k.wav, and output_fixed.wav remain
 
 ## Notes
 

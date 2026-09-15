@@ -185,7 +185,7 @@ sdkwork-tts server --mode local
 INSTALL_DIR=/opt/sdkwork-tts ./install.sh
 
 # Windows
-.\install.ps1 -InstallDir "C:\sdkwork-tts"
+.\install.ps1 -InstallDir "C:\Program Files\sdkwork-tts"
 ```
 
 ---

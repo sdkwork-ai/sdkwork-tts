@@ -156,7 +156,7 @@ DEBUG: Generated mel mean: -10.0921, Speaker mel mean: -6.4840, diff: 3.6081
 
 ## Python Reference Implementation
 
-The reference implementation is in `C:\AI\index-tts\indextts\`:
+The reference implementation is in `<reference-checkout>\indextts\`:
 - `s2mel/modules/flow_matching.py` - CFM sample loop
 - `s2mel/modules/diffusion_transformer.py` - DiT, FinalLayer
 - `s2mel/modules/gpt_fast/model.py` - AdaptiveLayerNorm

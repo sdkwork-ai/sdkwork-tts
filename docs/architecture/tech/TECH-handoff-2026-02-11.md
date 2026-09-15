@@ -18,7 +18,7 @@ Get IndexTTS2-Rust to produce clear speech (not rumbling water), ensure emotion 
 
 ## Upstream verification
 
-Local Python reference clone at `C:\AI\index-tts` matches current GitHub `main` HEAD:
+Local Python reference clone at `<reference-checkout>` matches current GitHub `main` HEAD:
 
 - Commit: `1698b32033f38a034572891aed698609da2ff392`
 
