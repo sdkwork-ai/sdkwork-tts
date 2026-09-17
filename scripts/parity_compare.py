@@ -429,7 +429,11 @@ def resolve_python_checkpoint(model_dir: Path, configured_name: str) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Compare Rust tensors to Python reference")
     parser.add_argument("--dump-dir", default="debug/parity", help="Rust parity dump directory")
-    parser.add_argument("--python-repo", default=r"C:\AI\index-tts", help="Path to python index-tts repo")
+    parser.add_argument(
+        "--python-repo",
+        default=os.environ.get("SDKWORK_TTS_PYTHON_REPO", "index-tts"),
+        help="Path to the python index-tts checkout (env SDKWORK_TTS_PYTHON_REPO)",
+    )
     parser.add_argument("--config", default="checkpoints/config.yaml", help="Path to config.yaml")
     parser.add_argument("--model-dir", default="checkpoints", help="Model dir used by config paths")
     parser.add_argument("--device", default="cuda:0", help="Torch device (e.g., cuda:0 or cpu)")

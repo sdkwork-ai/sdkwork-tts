@@ -200,8 +200,8 @@ pub fn get_model_or_error(model_id: &str) -> Result<PathBuf> {
              huggingface-cli download {}\n\n\
              # Environment variables:\n\
              $env:SDKWORK_TTS_HUB = 'modelscope'  # or 'huggingface'\n\
-             $env:MODELSCOPE_CACHE = 'D:\\models\\modelscope'\n\
-             $env:HF_HOME = 'D:\\models\\huggingface'",
+             $env:MODELSCOPE_CACHE = '<models-root>\\modelscope'\n\
+             $env:HF_HOME = '<models-root>\\huggingface'",
             model_id, resolved_id, resolved_id, resolved_id
         ),
         location: Some("model_loader::get_model_or_error".to_string()),
